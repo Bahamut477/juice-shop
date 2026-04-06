@@ -1,0 +1,21 @@
+name: Semgrep
+
+on:
+    push:
+        branches: ["**"]
+
+jobs:
+    semgrep-scan:
+        name: Run Semgrep
+        runs-on: ubuntu-latest
+
+        steps:
+            
+name: Checkout Repository
+            uses: actions/checkout@v4
+
+            
+name: Run Semgrep Analysis
+            uses: returntocorp/semgrep-action@v1
+            with:
+                config: "p/default"
